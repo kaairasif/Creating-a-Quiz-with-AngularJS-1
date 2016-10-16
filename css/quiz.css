@@ -211,6 +211,14 @@ body { background-color: #fff; padding: 20px; }
 #myQuiz .inactive.answered {
 	left: -1350px;
 }
-
+.share .btn.email {
+	margin-right: 20px;
+}
+/*test*/
+#myQuiz { height: 1000px }
+#myQuiz .results { 
+		top: 650px !important;
+		left:  40px !important; 
+}
 
 
