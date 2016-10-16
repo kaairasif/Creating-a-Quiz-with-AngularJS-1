@@ -11,7 +11,12 @@
 	<div id="myQuiz" ng-controller="QuizController">
 		<h1>Test Your Knowledge: <span>Saturn</span></h1>
 		<div class="progress">
-			<div class="{{ ($index === activeQuestion) ? 'on' : 'off' }}" ng-repeat="myQuestion in myQuestions"></div>
+			<div class="
+				{{ ($index === activeQuestion) ? 'on' : 'off' }}
+				{{ (myQuestion.questionState === 'answered') ? 'answered' : 'unanswered' }}
+				{{ (myQuestion.correctness === 'correct') ? 'correct' : 'incorrect' }}
+				" 
+			ng-repeat="myQuestion in myQuestions"></div>
 		</div>
 		<div class="intro {{ (activeQuestion > -1 ) ? 'inactive' : 'active' }}">
 			<h2>Welcome</h2>
@@ -26,17 +31,19 @@
 			<p class="txt">{{myQuestion.question}} {{myQuestion.selectedAnswer}}</p>
 			<p class="ans"
 			ng-class="{ 
+			    image:Answer.image,
 				selected:isSelected($parent.$index, $index), 
 				correct:isCorrect($parent.$index, $index)
 			}" 
+			ng-style="{ 'background-image' : 'url({{Answer.image}})' }"
 			ng-click="selectAnswer($parent.$index, $index)"
 			ng-repeat="Answer in myQuestions[$index].answers"> {{Answer.text}} </p>
 			
 			<div class="feedback">
-				<p>You are <strong>correct</strong></p>
-				<p>Oops! That is not correct</p>
-				<p>Additional feedback</p>
-				<div class="btn">Continue</div>
+				<p ng-show="myQuestion.correctness === 'correct' ">You are <strong>correct</strong></p>
+				<p ng-show="myQuestion.correctness === 'incorrect' ">Oops! That is not correct</p>
+				<p>{{ myQuestion.feedback }}</p>
+				<div class="btn" ng-click="selectContinue()">Continue</div>
 			</div>
 		</div>
 		<div class="results">
