@@ -36,9 +36,6 @@
 		} //end click
 
 		$scope.isSelected = function(qIndex, aIndex){
-			if($scope.myQuestions[qIndex].correctAnswer){
-				console.log("hi");
-			}
 			return $scope.myQuestions[qIndex].selectedAnswer === aIndex;
 		}
 		$scope.isCorrect = function(qIndex, aIndex){
@@ -50,7 +47,7 @@
 		}
 
 		$scope.createShareLinks = function(percentage) {
-			var url = 'http://kaairasif.com';
+			var url = 'http://kaairasif.com/angular_quiz';
 
 			var emailLink = '<a class="btn email" href="mailto:?subject=Try to beat my quiz score!&amp;body=I scored a ' + percentage + ' % on this quiz about Saturn. try to beat my score at ' + url + ' "> Email a friend </a>';
 			
