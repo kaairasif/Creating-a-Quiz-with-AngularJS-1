@@ -214,11 +214,22 @@ body { background-color: #fff; padding: 20px; }
 .share .btn.email {
 	margin-right: 20px;
 }
+.results p strong {
+	transition: font-size 0.5s;
+}
+.results.active p strong {
+    background: rgba(255, 255, 255, 0.1) none repeat scroll 0 0;
+    border: 1px solid #ff0000;
+    color: #ff0000;
+    font-size: 20px;
+    margin: 0 5px;
+    padding: 0 5px;
+}
 /*test*/
-#myQuiz { height: 1000px }
+/*#myQuiz { height: 1000px }
 #myQuiz .results { 
 		top: 650px !important;
 		left:  40px !important; 
 }
-
+*/
 

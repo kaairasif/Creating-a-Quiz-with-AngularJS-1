@@ -23,6 +23,7 @@
 			<p>Click begin to test your knowledge of saturn</p>
 			<p class="btn" ng-click="activeQuestion = 0">Begin</p>
 		</div>
+		
 		<div class="question 
 				{{ myQuestion.questionState === 'answered' ? 'answered' : 'unanswered'  }}	
 				{{ $index === activeQuestion ? 'active' : 'inactive'}}
@@ -46,9 +47,10 @@
 				<div class="btn" ng-click="selectContinue()">Continue</div>
 			</div>
 		</div>
+
 		<div class="results {{ (totalQuestions === activeQuestion) ? 'active' : 'inactive' }} ">
 			<h3>Results</h3>
-			<p>You scored {{ percentage }}% by correctly answering {{ score }} of the total {{ totalQuestions }} questions</p>
+			<p>You scored <strong>{{ percentage }}%</strong> by correctly answering <strong>{{ score }}</strong> of the total <strong>{{ totalQuestions }}</strong> questions</p>
 			<p>Use the links below to challenge your friends</p>
 			<div class="share" ng-bind-html="createShareLinks(percentage)" ></div>
 		</div>
