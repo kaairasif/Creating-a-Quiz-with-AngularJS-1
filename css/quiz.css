@@ -226,11 +226,11 @@ body { background-color: #fff; padding: 20px; }
     padding: 0 5px;
 }
 /*test*/
-#myQuiz { height: 1000px }
+/*#myQuiz { height: 1000px }
 #myQuiz .results { 
 		top: 650px !important;
 		left:  40px !important; 
-}
+}*/
 
 
 @media screen and (max-width: 650px) {

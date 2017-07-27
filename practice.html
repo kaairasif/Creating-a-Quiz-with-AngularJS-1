@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html ng-app="myQuiz">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Test Your Knowledge: Saturn</title>
+		<link rel="stylesheet" type="text/css" href="css/quiz.css">
+	</head>
+	<body>
+
+	<div id="myQuiz" ng-controller="QuizController">
+		<h1>Test Your Knowledge: <span>Saturn</span></h1>
+		<div class="progress">
+			<div class=""></div>
+		</div>
+		<div class="intro">
+			<h2>Welcome</h2>
+			<p>Click begin to test your knowledge of saturn</p>
+			<p class="btn">Begin</p>
+		</div>		
+		<div class="question">
+			<p class="txt"></p>
+			<p class="ans"></p>
+			
+			<div class="feedback">
+				<p>You are <strong>correct</strong></p>
+				<p>Oops! That is not correct</p>
+				<p></p>
+				<div class="btn">Continue</div>
+			</div>
+		</div>
+
+		<div class="results">
+			<h3>Results</h3>
+			<p>You scored <strong>%</strong> by correctly answering <strong>{{ score }}</strong> of the total <strong>{{ totalQuestions }}</strong> questions</p>
+			<p>Use the links below to challenge your friends</p>
+			<div class="share"></div>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/custom-quiz.js"></script>
+
+	</body>
+</html>
